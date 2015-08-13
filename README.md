@@ -3,7 +3,8 @@ HR app - a somewhat generic personal project. Its initial function will be track
 
 General structure:
 
-- JEE application, based on Spring
+- JEE application, based on Spring Boot, with PostgreSQL, Spring Security, web, REST services
+- AngularJS
 - Maven build
 - PostgreSQL database 
 
