@@ -4,8 +4,8 @@ body {
 }
 
 header {
-#	background-image: url("../images/hr_logo.jpg");
-#	background-repeat: no-repeat;
+	background-image: url("../images/lmi_logo.jpg");
+	background-repeat: no-repeat;
 	padding-left: 250px;
 	background-color: #333377;
 	color: white;
