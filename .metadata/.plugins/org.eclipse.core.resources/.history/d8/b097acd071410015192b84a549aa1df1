@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-app="employeeApp">
+<head>
+	<title>Employee</title>
+	<link rel="stylesheet" type="text/css" href="css/hr.css">
+	<link rel="stylesheet" type="text/css" href="css/employee.css">
+	<meta charset="utf-8">
+</head>
+
+<body ng-controller="EmployeeCtrl as ctrl">
+
+<header><span>HR System</span></header>
+
+<div class="employee">
+	<div class="emp_header">
+		<span class="emp_heading">Employee</span>
+		<div class="emp_name">
+			<p>{{employee.lastname}}, {{employee.firstname}}</p>
+			<p>{{employee.type}}</p>
+		</div>
+		<img class="emp_photo" src="images/unknown_person.jpg"></img>
+	</div>
+	<div class="emp_data">
+		<form ng-submit="ctrl.submit()">
+			<table class="emp_data_table">
+				<tr><td>Last Name</td><td><input type="text" ng-model="ctrl.employee.lastname" ng-disabled="!ctrl.readonly()" required/></td></tr>
+				<tr><td>First Name</td><td><input type="text" ng-model="ctrl.employee.firstname" ng-disabled="!ctrl.readonly()" required/></td></tr>
+				<tr><td>Middle Name</td><td><input type="text" ng-model="ctrl.employee.middlename" ng-disabled="!ctrl.readonly()"/></td></tr>
+				<tr><td>Title</td><td><input type="text" ng-model="ctrl.employee.title" ng-disabled="!ctrl.readonly()" required/></td></tr>
+				<tr>
+					<td>Type</td>
+					<td>
+						<select ng-model="ctrl.employee.type" ng-disabled="!ctrl.readonly()">
+							<option>Admin</option>
+							<option>Support</option>
+							<option>RF</option>
+							<option>PM</option>
+							<option>PD</option>
+							<option>VP</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+	<div class="emp_buttons">
+		<div id="emp_buttons_noedit">
+			<button ng-click="ctrl.setEdit(true);">Edit</button>
+		</div>
+		<div id="emp_buttons_edit">
+			<button ng-click="ctrl.submit();">Save</button>
+			<button ng-click="ctrl.reset();">Reset</button>
+			<button ng-click="ctrl.setEdit(false);">Cancel</button>
+		</div>
+	</div>
+	<div class="emp_other">
+	
+	</div>
+</div>
+
+<script src="js/angular.js"></script>
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+angular.module('employeeApp', [])
+.controller('EmployeeCtrl', ["$location", "$http", function($location, $http) {
+	var self = this;
+	self.allowEdit = false;
+	self.employee = { };
+
+	self.setEdit = function(edit) {
+		self.allowEdit = edit;
+	};
+	self.submit = function() {
+		
+	};
+	self.reset = function() {
+		
+	};
+	self.readonly = function() {
+		return !self.allowEdit;
+	}
+	
+	var employeeId = $location.search("id");
+	if (employeeId) {
+		self.employee = $http.get("/employee/" + employeeId);
+	}
+}]);
+</script>
+
+</body>
+</html>

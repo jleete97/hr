@@ -1,0 +1,77 @@
+body {
+	background-color: #ddeeff;
+	margin: 0;
+}
+
+header {
+	background-image: url("../images/lmi_logo.jpg");
+	background-repeat: no-repeat;
+	padding-top: 30px;
+	padding-left: 250px;
+	background-color: #333377;
+	color: white;
+	font-style: italic;
+	font-size: xx-large;
+	height: 72px;
+}
+
+.employee {
+	height: 100%;
+	position: fixed;
+	top: 102px;
+	left: 0px;
+}
+
+.emp_header {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 700px;
+	height: 200px;
+	background-color: #ddffee;
+}
+
+.emp_heading {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	font-size: x-large;
+	font-color: grey;
+	padding: 15px;
+}
+
+.emp_name {
+	position: absolute;
+	top: 50px;
+	left: 0px;
+	padding: 15px;
+	font-size: large;
+}
+
+.emp_photo {
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.emp_data {
+	position: absolute;
+	top: 200px;
+	width: 700px;
+	background-color: #ffeedd;
+}
+
+.emp_data_table {
+	border: 0;
+	margin: 15px;
+	border-spacing: 50px 20px;
+}
+
+.emp_other {
+	position: absolute;
+	top: 0;
+	left: 700px;
+	background-color: #ffeedd;
+}

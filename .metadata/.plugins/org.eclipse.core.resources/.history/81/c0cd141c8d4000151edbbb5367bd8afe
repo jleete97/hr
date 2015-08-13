@@ -1,0 +1,46 @@
+package com.jonandvirginia.hr.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.jonandvirginia.hr.model.Employee;
+import com.jonandvirginia.hr.repo.EmployeeRepository;
+import com.jonandvirginia.hr.service.EmployeeService;
+
+public class EmployeeServiceImpl implements EmployeeService {
+
+	@Autowired
+	EmployeeRepository employeeRepository;
+	
+	@Override
+	public List<Employee> listEmployees() {
+		List<Employee> employees = new ArrayList<>();
+		
+		Iterable<Employee> data = employeeRepository.findAll();
+		for (Employee emp : data) {
+			employees.add(emp);
+		}
+		
+		return employees;
+	}
+
+	@Override
+	public List<Employee> findByNames(String firstname, String lastname) {
+		List<Employee> employees = new ArrayList<>();
+		
+		Iterable<Employee> data = employeeRepository.findAll();
+		for (Employee emp : data) {
+			employees.add(emp);
+		}
+		
+		return employees;
+	}
+
+	@Override
+	public Employee getById(String id) {
+		return employeeRepository.findOne(id);
+	}
+
+}

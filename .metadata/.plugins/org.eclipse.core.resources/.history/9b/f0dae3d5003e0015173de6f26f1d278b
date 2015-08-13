@@ -1,0 +1,8 @@
+package com.jonandvirginia.hr.model;
+
+public class Review {
+
+	private String employeeId;
+	private String periodId;
+	private String status;
+}

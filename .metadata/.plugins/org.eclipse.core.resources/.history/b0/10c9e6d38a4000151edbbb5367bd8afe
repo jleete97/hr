@@ -1,0 +1,20 @@
+<html ng-app="hrapp">
+<head>
+	<title>HR App</title>
+	<link rel="stylesheet" type="text/css" href="css/hr.css">
+	<meta charset="utf-8">
+</head>
+
+<body ng-controller="HrController as ctrl">
+
+<header><span>HR System</span></header>
+
+<div class="major_buttons">
+	<ul>
+		<li><a href="group.html">Groups</a></li>
+		<li><a href="employee.html">Employees</a></li>
+	</ul>
+</div>
+
+</body>
+</html>

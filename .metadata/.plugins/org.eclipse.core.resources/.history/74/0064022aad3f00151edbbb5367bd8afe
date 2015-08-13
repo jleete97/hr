@@ -1,0 +1,5 @@
+body {
+	background-color: #ddddff;
+	margin-top: 200px;
+	margin-left: 0;
+}

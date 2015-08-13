@@ -1,0 +1,6 @@
+body {
+	background-image: url("images/lmi_logo.gif");
+	background-color: #ddddff;
+	margin-top: 200px;
+	margin-left: 0;
+}

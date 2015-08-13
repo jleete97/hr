@@ -1,0 +1,30 @@
+body {
+	background-color: #ddeeff;
+}
+
+header {
+	background-image: url("../images/lmi_logo.jpg");
+	background-repeat: no-repeat;
+	margin-left: 250;
+	background-color: #333377;
+}
+
+div.employee {
+	height: 100%;
+}
+
+div.emp_header {
+	
+}
+
+.emp_heading {
+	
+}
+
+.emp_name {
+	
+}
+
+.emp_photo {
+	
+}

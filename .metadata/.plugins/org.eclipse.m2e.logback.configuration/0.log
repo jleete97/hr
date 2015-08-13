@@ -1,0 +1,4 @@
+2015-08-08 00:03:06,805 [Worker-47] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://localhost:8081/nexus/content/groups/public/com/h2database/h2/1.4.187/h2-1.4.187.pom
+2015-08-08 00:03:06,819 [Worker-47] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://localhost:8081/nexus/content/groups/public/com/h2database/h2/1.4.187/h2-1.4.187.pom
+2015-08-08 00:03:07,878 [Worker-47] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://localhost:8081/nexus/content/groups/public/com/h2database/h2/1.4.187/h2-1.4.187.jar
+2015-08-08 00:03:07,950 [Worker-47] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://localhost:8081/nexus/content/groups/public/com/h2database/h2/1.4.187/h2-1.4.187.jar

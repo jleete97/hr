@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html ng-app="employeeApp">
+<head>
+	<title>Employee</title>
+	<link rel="stylesheet" type="text/css" href="css/hr.css">
+	<meta charset="utf-8">
+</head>
+
+<body ng-controller="EmployeeCtrl as ctrl">
+
+<header><span>HR System</span></header>
+
+<div class="employee">
+	<div class="emp_header">
+		<span class="emp_heading">Employee</span>
+		<div class="emp_name">
+			<p>{{employee.lastname}}, {{employee.firstname}}</p>
+			<p>{{employee.type}}</p>
+		</div>
+		<img class="emp_photo" src="images/unknown_person.jpg"></img>
+	</div>
+	<div class="emp_data">
+		<table class="emp_data_table">
+			<tr><td>Last Name</td><td><input type="text" ng-model="employee.lastname"/></td></tr>
+			<tr><td>First Name</td><td><input type="text" ng-model="employee.firstname"/></td></tr>
+			<tr><td>Middle Name</td><td><input type="text" ng-model="employee.middlename"/></td></tr>
+			<tr><td>Title</td><td><input type="text" ng-model="employee.title"/></td></tr>
+			<tr>
+				<td>Type</td>
+				<td>
+					<select ng-model="employee.type">
+						<option>Admin</option>
+						<option>Support</option>
+						<option>RF</option>
+						<option>PM</option>
+						<option>PD</option>
+						<option>VP</option>
+					</select>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="emp_buttons">
+		<div id="emp_buttons_noedit">
+			<button ng-click="ctrl.setEdit(true);">Edit</button>
+		</div>
+		<div id="emp_buttons_edit">
+			<button>Save</button>
+			<button>Reset</button>
+			<button ng-click="ctrl.setEdit(false);">Cancel</button>
+		</div>
+	</div>
+	<div class="emp_other">
+	
+	</div>
+</div>
+
+<script src="js/angular.js"></script>
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+angular.module('employeeApp', [])
+.controller('EmployeeCtrl', [function() {
+	var self = this;
+	var employees = [
+	     			{
+	    				id: 1,
+	    				firstname: "Alice",
+	    				lastname: "Smith",
+	    				title: "Dr.",
+	    				type: "RF"
+	    			},
+	    			{
+	    				id: 2,
+	    				firstname: "Bob",
+	    				lastname: "Washington",
+	    				title: "Mr.",
+	    				type: "RF"
+	    			},
+	    			{
+	    				id: 3,
+	    				firstname: "Carol",
+	    				lastname: "Mendoza",
+	    				title: "Dr.",
+	    				type: "PM"
+	    			}
+	  ];
+	self.setEdit = function(allowEdit) {
+		if (allowEdit) {
+			$("input").removeAttr("disabled");
+			$("select").removeAttr("disabled");
+			$("#emp_buttons_edit").show();
+			$("#emp_buttons_noedit").hide();
+		} else {
+			$("input").attr("disabled", "disabled");
+			$("select").attr("disabled", "disabled");
+			$("#emp_buttons_edit").hide();
+			$("#emp_buttons_noedit").show();
+		}
+	};
+	self.setEdit(false);
+	self.employee = employees[0];
+}]);
+</script>
+
+</body>
+</html>

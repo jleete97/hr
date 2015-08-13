@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="employeesApp">
+<head>
+	<title>Employees</title>
+	<link rel="stylesheet" type="text/css" href="css/hr.css">
+	<link rel="stylesheet" type="text/css" href="css/employees.css">
+	<meta charset="utf-8">
+</head>
+
+<body ng-controller="EmployeesCtrl as ctrl">
+
+<header><span>HR System - Employees</span></header>
+
+<div class="employee">
+	<table class="employee_list_table">
+		<tr>
+			<th>Type</th>
+			<th>Title</th>
+			<th>Name</th>
+			<th align="right"><button ng-click="ctrl.addEmployee()">Add Employee</button></th>
+		</tr>
+
+		<tr ng-repeat="emp in ctrl.employees">
+			<td>{{emp.type}}</td>
+			<td>{{emp.title}}</td>
+			<td>{{emp.lastname}}, {{emp.firstname}}</td>
+			<td><a href="employee.html?id={{emp.id}}">Edit</a></td>
+		</tr>
+	</table>
+</div>
+
+<script src="js/angular.js"></script>
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+angular.module('employeesApp', [])
+.controller('EmployeesCtrl', ["$http", function($http) {
+	var self = this;
+	self.employees = [];
+	var fetchEmployees = function() {
+		return $http.get("/employee/").then(
+			function(response) {
+				self.employees = response.data;
+			}, function(errResponse) {
+				console.error("Error loading employee list");
+			});
+	};
+	
+	fetchEmployees();
+}]);
+</script>
+
+</body>
+</html>

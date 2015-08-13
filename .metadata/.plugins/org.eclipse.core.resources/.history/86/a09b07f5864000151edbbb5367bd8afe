@@ -1,0 +1,14 @@
+<html ng-app="hrapp">
+<head>
+	<title>Good morning, world!</title>
+</head>
+
+<body ng-controller="HrController as ctrl">
+
+<h2>Good morning!</h2>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3.2/angular.js"></script>
+
+
+</body>
+</html>

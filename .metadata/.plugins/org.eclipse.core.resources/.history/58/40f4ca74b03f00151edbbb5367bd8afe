@@ -1,0 +1,13 @@
+body {
+	background-image: url("../images/lmi_logo.gif");
+	margin-top: 200px;
+	margin-left: 0;
+}
+
+.group {
+	background-color: lightblue;
+}
+
+.employee {
+	background-color: #ddffdd;
+}

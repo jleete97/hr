@@ -1,0 +1,58 @@
+body {
+	background-color: #ddeeff;
+	margin: 0;
+}
+
+header {
+	background-image: url("../images/lmi_logo.jpg");
+	background-repeat: no-repeat;
+	padding-left: 250px;
+	background-color: #333377;
+	color: white;
+	font-style: italic;
+	font-size: xx-large;
+	height: 102px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+header span {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+}
+
+.major_buttons {
+	text-align: center;
+	padding: 40px;
+}
+
+.major_buttons a {
+	text-align: center;
+	height: 4em;
+	width: 15em;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: xx-large;
+	background-color: #66bbff;
+}
+
+.major_buttons a:link {
+    background-color: #ffbb66;
+}
+
+.major_buttons a:visited {
+    background-color: #ffbb66;
+}
+
+.major_buttons a:hover {
+    background-color: #ffbb66;
+}
+
+.major_buttons a:active {
+    background-color: #ffffaa;
+} 

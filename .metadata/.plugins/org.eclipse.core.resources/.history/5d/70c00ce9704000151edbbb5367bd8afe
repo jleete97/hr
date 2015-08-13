@@ -1,0 +1,27 @@
+angular.module('employeeApp', [])
+	.controller('EmployeeCtrl', [function() {
+		var self = this;
+		var employees = [
+		     			{
+		    				id: 1,
+		    				firstname: "Alice",
+		    				lastname: "Smith",
+		    				title: "Dr.",
+		    				type: "RF"
+		    			},
+		    			{
+		    				id: 2,
+		    				firstname: "Bob",
+		    				lastname: "Washington",
+		    				title: "Mr.",
+		    				type: "RF"
+		    			},
+		    			{
+		    				id: 3,
+		    				firstname: "Carol",
+		    				lastname: "Mendoza",
+		    				title: "Dr.",
+		    				type: "PM"
+		    			}
+		  ];
+}]);
