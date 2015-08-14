@@ -1,5 +1,5 @@
 ## hr
-HR app - a somewhat generic personal project. Its initial function will be tracking employee reviews.
+HR app - a somewhat generic personal project. Its initial function will be tracking employee data.
 
 General structure:
 
