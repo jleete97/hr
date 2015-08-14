@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS hrschema.employee (
     id VARCHAR(50) PRIMARY KEY DEFAULT gen_random_uuid(),
     firstname VARCHAR(50),
     lastname VARCHAR(50),
-    group VARCHAR(10),
+    group VARCHAR(50),
     type VARCHAR(10),
     title VARCHAR(20)
 );
