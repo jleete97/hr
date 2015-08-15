@@ -29,30 +29,13 @@
 	</table>
 </div>
 
-<script src="js/angular.js"></script>
 <script src="js/jquery-1.11.3.js"></script>
-<script>
-angular.module('employeesApp', [])
-.controller('EmployeesCtrl', ["$http", function($http) {
-	var self = this;
-	self.employees = [];
+<script src="js/angular.js"></script>
+<script src="js/angular-route.js"></script>
 
-	self.getEmployees = function() {
-		return $http.get("/employee/").then(
-			function(response) {
-				self.employees = response.data;
-			}, function(errResponse) {
-				console.error("Error loading employee list");
-			});
-	};
-	
-	self.addEmployee = function() {
-		window.open("employee.html");
-	}
-	
-	self.getEmployees();
-}]);
-</script>
+<script src="js/app.js"></script>
+<script src="js/services.js"></script>
+<script src="js/controllers.js"></script>
 
 </body>
 </html>

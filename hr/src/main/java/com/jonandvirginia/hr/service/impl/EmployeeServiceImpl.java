@@ -31,6 +31,31 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
+	public Employee get(String id) {
+		return employeeRepository.findOne(id);
+	}
+	
+	@Override
+	public Employee save(Employee employee) {
+		Employee saved = employeeRepository.save(employee);
+		return saved;
+	}
+
+	@Override
+	public Employee update(Employee employee) {
+		Employee updated = employeeRepository.save(employee);
+		return updated;
+	}
+	
+	@Override
+	public void delete(String id) {
+		Employee employee = get(id);
+		if (employee != null) {
+			employeeRepository.delete(employee);
+		}
+	}
+
+	@Override
 	public List<Employee> findByNames(String firstname, String lastname) {
 		if (StringUtils.isEmpty(firstname)) {
 			if (StringUtils.isEmpty(lastname)) {
@@ -46,10 +71,4 @@ public class EmployeeServiceImpl implements EmployeeService {
 			}
 		}
 	}
-
-	@Override
-	public Employee getById(String id) {
-		return employeeRepository.findOne(id);
-	}
-
 }

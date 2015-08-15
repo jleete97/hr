@@ -8,3 +8,8 @@
 1439386264338	Move 'public' to 'resources'
 1439437910377	Rename method 'listEmployees'
 1439486144341	Delete elements
+1439570791985	Move 'app.js' to 'js'
+1439589616785	Delete element
+1439610591279	Rename type 'UserServiceImpl'
+1439611235207	Delete element
+1439613712080	Move compilation unit

@@ -6,7 +6,7 @@ body {
 header {
 #	background-image: url("../images/hr_logo.jpg");
 #	background-repeat: no-repeat;
-	padding-left: 250px;
+#	padding-left: 250px;
 	background-color: #333377;
 	color: white;
 	font-style: italic;
@@ -21,6 +21,7 @@ header {
 header span {
 	position: relative;
 	top: 50%;
+	padding: 10px;
 	transform: translateY(-50%);
 	-webkit-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
@@ -77,4 +78,133 @@ header span {
 .major_buttons a:active {
 	color: black;
 	background-color: #ffaaaa;
+}
+
+### Employee List ###
+
+.employees {
+	height: 100%;
+	position: fixed;
+	top: 102px;
+	left: 0px;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.employee_list_table {
+#    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 600px;
+    border-collapse: collapse;
+    padding: 30px;
+}
+
+.employee_list_table td, .employee_list_table th {
+    font-size: 1em;
+    border: 1px solid blue;
+    padding: 3px 7px 2px 7px;
+}
+
+.employee_list_table th {
+    font-size: 1.1em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    color: black;
+    background-color: #9999cc;
+}
+
+.employee_list_table tr.alt td {
+    color: black;
+    background-color: #aaaaff;
+}
+
+### Single Employee ###
+
+.employee {
+	height: 100%;
+	position: fixed;
+	top: 102px;
+	left: 0px;
+}
+
+.emp_header {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 700px;
+	height: 200px;
+	background-color: #ddffee;
+}
+
+.emp_heading {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	font-size: x-large;
+	font-color: grey;
+	padding: 15px;
+}
+
+.emp_name {
+	position: absolute;
+	top: 50px;
+	left: 0px;
+	padding: 15px;
+	font-size: large;
+}
+
+.emp_photo {
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.emp_data {
+	position: absolute;
+	top: 120px;
+	width: 700px;
+	height: 400px;
+	background-color: #ffeedd;
+}
+
+.emp_data_table {
+	border: 0;
+	margin: 15px;
+	border-spacing: 50px 20px;
+}
+
+.emp_buttons {
+	position: absolute;
+	top: 520px;
+	width: 700px;
+	height: 60px;
+	background-color: #ffffdd;
+}
+
+#emp_buttons_noedit {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0px;
+	height: 60px;
+	margin-left: 100px;
+}
+
+#emp_buttons_edit {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0px;
+	height: 60px;
+#	visibility: hidden;
+	margin-left: 100px;
+}
+
+.emp_other {
+	position: absolute;
+	top: 0;
+	left: 700px;
+	background-color: #ffeedd;
 }
