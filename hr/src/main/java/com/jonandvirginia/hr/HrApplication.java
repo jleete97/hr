@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableAutoConfiguration
-@ComponentScan(basePackages = { "com.jonandvirginia.hr" })
+@ComponentScan("com.jonandvirginia.hr")
 public class HrApplication {
     
     public static void main(String[] args) {

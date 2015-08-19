@@ -1,0 +1,19 @@
+<div class="card">
+	<table class="list_table">
+		<tr>
+			<th>Type</th>
+			<th>Name</th>
+			<th>Text</th>
+			<th>Status</th>
+			<th align="right"><button ng-click="ctrl.addGoal()">Add Goal</button></th>
+		</tr>
+
+		<tr ng-repeat="goal in ctrl.goals">
+			<td>{{goal.type}}</td>
+			<td>{{goal.name}}</td>
+			<td>{{goal.description}}</td>
+			<td>{{goal.status}}</td>
+			<td><a href="/goal.html?id={{goal.id}}">Edit</a></td>
+		</tr>
+	</table>
+</div>

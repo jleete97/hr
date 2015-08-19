@@ -8,5 +8,5 @@ import com.jonandvirginia.hr.model.Goal;
 
 public interface GoalRepository extends CrudRepository<Goal, String> {
 
-    List<Goal> findByEmployeeAndPeriod(String employee, String period);
+//    List<Goal> findByEmployeeAndPeriod(String employee, String period);
 }

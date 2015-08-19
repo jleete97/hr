@@ -18,13 +18,37 @@ header {
 	width: 100%;
 }
 
-header span {
+.header_title {
 	position: relative;
 	top: 50%;
 	padding: 10px;
 	transform: translateY(-50%);
 	-webkit-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
+}
+
+.header_links {
+	position: absolute;
+	bottom: 0.5em;
+	right: 20em;
+	font-size: small;
+}
+
+.header_links a {
+	color: white;
+	text-decoration: none;
+}
+
+.login_message {
+	position: absolute;
+	bottom: 1em;
+	right: 2em;
+	font-size: medium;
+}
+
+.login_message a {
+	color: white;
+	text-decoration: none;
 }
 
 .major_buttons {
@@ -78,6 +102,34 @@ header span {
 .major_buttons a:active {
 	color: black;
 	background-color: #ffaaaa;
+}
+
+### Working section ###
+
+div.card {
+	width: 100%;
+	position: absolute;
+	top: 150px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: yellow;
+}
+
+div.card div.work_area {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 80px;
+	background-color: lightblue;
+}
+
+div.card div.buttons {
+	width: 100%;
+	position: absolute;
+	height: 80px;
+	bottom: 0;
+	background-color: lightgreen;
 }
 
 ### Employee List ###

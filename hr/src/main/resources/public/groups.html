@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Group</title>
-	<link rel="stylesheet" type="text/css" href="css/hr.css">
-	<meta charset="utf-8">
-</head>
+<div class="card" id="groups">
+	<table class="list_table">
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th align="right"><button ng-click="ctrl.addGroup()">Add Group</button></th>
+		</tr>
 
-<body class="group">
-Group
-
-</body>
-</html>
+		<tr ng-repeat="group in ctrl.groups">
+			<td>{{group.name}}</td>
+			<td>{{group.type}}</td>
+			<td><a href="/group.html?id={{group.id}}">Edit</a></td>
+		</tr>
+	</table>
+</div>
