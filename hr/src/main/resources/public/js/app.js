@@ -1,16 +1,19 @@
 // Module routes, configuration
 
 angular.module("hrApp", ["ngRoute"])
+
 	.config("$routeProvider", function($routeProvider) {
-		
+	
 		$routeProvider.when("/", {
 			templateUrl: "employees.html",
-			controller: "EmployeesCtrl"
+			controller: "EmployeesController"
 		})
 		.when("/employees", {
 			templateUrl: "employees.html",
-			controller: "EmployeeCtrl"
+			controller: "EmployeeController"
 		})
+			;
+/*
 		.when("/employee/:id", {
 			templateUrl: "employee.html",
 			controller: "EmployeeCtrl"
@@ -51,6 +54,7 @@ angular.module("hrApp", ["ngRoute"])
 		.when("/login", {
 			templateUrl: "login.html"
 		});
+*/
 		
 		$routeProvider.otherwise({
 			redirectTo: "/"
