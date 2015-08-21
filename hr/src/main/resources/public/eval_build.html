@@ -1,0 +1,42 @@
+<div class="card" id="eval" ng-controller="EvalBuildController as ctrl">
+	<div class="work_area">
+		<div class="employee">
+			<div class="emp_header">
+				<span class="emp_heading">Employee</span>
+				<div class="emp_name">
+					<p>{{ctrl.employee.lastname}}, {{ctrl.employee.firstname}}</p>
+					<p>{{ctrl.employee.type}}</p>
+				</div>
+				<img class="emp_photo" src="images/unknown_person.jpg"></img>
+			</div>
+			<tabs>
+				<tab title="Competencies">
+						<table>
+							<tr ng-repeat="goal in ctrl.fixedGoals()">
+								<td>{{$index}}</td>
+								<td>{{goal.name}}</td>
+								<td>{{goal.description}}</td>
+							</tr>
+						</table>
+				</tab>
+				<tab title="Goals">
+					<form>
+						<table>
+							<tr ng-repeat="goal in ctrl.userGoals()">
+								<td>{{$index}}</td>
+								<td><textarea rows="5" cols="80" ng-model="goal.description"></textarea></td>
+								<td><button>Remove</button>
+							</tr>
+						</table>
+					</form>				
+				</tab>
+			</tabs>
+		</div>
+	</div>
+
+	<div class="buttons">
+		<button ng-click="ctrl.submit();">Save</button>
+		<button ng-click="ctrl.done();">Done</button>
+		<button ng-click="ctrl.cancel();">Cancel</button>
+	</div>
+</div>
