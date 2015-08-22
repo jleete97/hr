@@ -35,4 +35,6 @@ More documentation:
 
 [Database](md/dbsetup.md)
 
+[Lessons Learned](md/lessonslearned.md)
+
 [Maven](md/maven.md)
