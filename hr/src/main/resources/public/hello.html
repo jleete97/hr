@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HR - Hello</title>
+	<link rel="stylesheet" type="text/css" href="css/hr.css">
+	<meta charset="utf-8">
+</head>
+
+<body ng-app="hrApp">
+
+<header ng-controller="MainCtrl as mainCtrl">
+	<span class="header_title">HR System</span>
+	<div class="header_links">
+		<a href="#/groups">Groups</a>
+		<a href="#/periods">Periods</a>
+		<a href="#/goals">Goals</a>
+		<a href="#/employees">Employees</a>
+		<a href="#/reviews">Reviews</a>
+	</div>
+	<div class="login_message">
+		<span ng-show="mainCtrl.userService.isLoggedIn"><a href="/logout">Log Out</a></span>
+		<span ng-hide="mainCtrl.userService.isLoggedIn"><a href="#/login">Log In</a></span>
+	</div>
+</header>
+
+<!-- div class="mainView" ng-view>
+</div -->
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/angular.js"></script>
+<script src="js/angular-route.js"></script>
+
+<script type="text/javascript">
+angular.module("hrApp", ["ngRoute"])
+
+.config(["$routeProvider", function($routeProvider) {
+
+	$routeProvider.when("/", {
+		templateUrl: "employees.html",
+		controller: "EmployeesController"
+	})
+	.when("/employees", {
+		templateUrl: "employees.html",
+		controller: "EmployeeController"
+	});
+	
+	$routeProvider.otherwise({
+		redirectTo: "/"
+	});
+}])
+/*
+*/
+;
+
+//Controllers
+
+angular.module('hrApp')
+	.controller('EmployeesController',
+			["UserService", "EmployeeService", "GroupService", "ReviewService",
+			function(UserService, EmployeeService, GroupService, ReviewService) {
+		var self = this;
+		self.employees = [
+		   { type : "RF", title : "Dr.", firstname : "Alice", lastname: "Acropolis" },
+           { type : "RF", title : "Mr.", firstname : "Bob", lastname: "Berkeley" },
+           { type : "RF", title : "Mr.", firstname : "Chris", lastname: "Carlson" }            
+		];
+	
+		self.getEmployees = function() {
+			return employees;
+//			return $http.get("/employee/").then(
+//				function(response) {
+//					self.employees = response.data;
+//				}, function(errResponse) {
+//					console.error("Error loading employee list");
+//				});
+		};
+		
+		self.addEmployee = function() {
+//			window.open("employee.html");
+		}
+		
+//		self.getEmployees();
+	}])
+	
+	.controller('MainCtrl',
+			["UserService", "EmployeeService", "GroupService", "ReviewService",
+			function(UserService, EmployeeService, GroupService, ReviewService) {
+		var self = this;
+		self.userService = UserService;
+		self.employeeService = EmployeeService;
+		self.groupService = GroupService;
+		self.reviewService = ReviewService;
+	}])
+	
+	.controller('EmployeeController',
+			["UserService", "EmployeeService", "GroupService", "ReviewService",
+			function(UserService, EmployeeService, GroupService, ReviewService) {
+		var self = this;
+		self.edit = false;
+		self.employee = {
+		    firstname: "Diana",
+		    lastname: "Prince",
+		    middlename: "Amazon",
+		    title: "Dr.",
+		    type: "PM"
+		};
+
+		self.setEdit = function(allowEdit) {
+			self.edit = allowEdit;
+		};
+		self.submit = function() {
+			
+		};
+		self.reset = function() {
+			
+		};
+		self.readonly = function() {
+			return !self.edit;
+		}
+		
+		var employeeId = $location.search("id");
+		if (employeeId) {
+			self.employee = $http.get("/employee/" + employeeId);
+		}
+	}])
+;
+
+angular.module("hrApp")
+.factory("UserService", ["$http", function($http) {
+	return {
+		isLoggedIn: false,
+
+		session: function() {
+			return $http.get('/api/session')
+			.then(function(response) {
+				service.isLoggedIn = true;
+				return response;
+			});
+		},
+
+		login: function(user) {
+			return $http.post('/api/login', user)
+			.then(function(response) {
+				service.isLoggedIn = true;
+				return response;
+			});
+		}
+	};
+}])
+
+.factory("EmployeeService", ["$http", function($http) {
+	return {
+		
+	};
+}])
+
+.factory("GroupService", ["$http", function($http) {
+	return {
+		
+	};
+}])
+
+.factory("ReviewService", ["$http", function($http) {
+	return {
+		
+	};
+}]);
+
+</script>
+
+</body>
+</html>

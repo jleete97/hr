@@ -1,4 +1,0 @@
-.employee_list_table {
-	border: 2px line solid;
-	padding: 10px;
-}
