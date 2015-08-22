@@ -31,6 +31,8 @@ Development environment:
 
 More documentation:
 
+[Application Structure](md/appstructure.md)
+
 [Database](md/dbsetup.md)
 
 [Maven](md/maven.md)
