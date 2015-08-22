@@ -69,9 +69,14 @@ angular.module('hrApp')
 			self.employee = $http.get("/employee/" + employeeId);
 		}
 	}])
-;
-/*
+
 	.controller('GroupCtrl',
+			["UserService", "EmployeeService", "GroupService", "ReviewService",
+			function(UserService, EmployeeService, GroupService, ReviewService) {
+		var self = this;
+	}])
+
+	.controller('GroupsCtrl',
 			["UserService", "EmployeeService", "GroupService", "ReviewService",
 			function(UserService, EmployeeService, GroupService, ReviewService) {
 		var self = this;
@@ -110,4 +115,3 @@ angular.module('hrApp')
 			function(UserService, EmployeeService, GroupService, ReviewService) {
 		var self = this;
 	}]);
-*/
