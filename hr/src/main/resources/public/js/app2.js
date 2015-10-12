@@ -21,11 +21,25 @@ angular.module("testApp", ["ngRoute"])
 		.when("/manager", {
 			templateUrl: "manager.html"
 		})
+		.when("/groups", {
+			templateUrl: "groups.html",
+			controller: "GroupsController"
+		})
+		.when("/group/:id", {
+			templateUrl: "group.html",
+			controller: "GroupsController"
+		})
+		.when("/employee/:id", {
+			templateUrl: "employee.html",
+			controller: "EmployeeController"
+		})
 		.when("/reports", {
-			templateUrl: "reports.html"
+			templateUrl: "reports.html",
+			controller: "ReportsController"
 		})
 		.when("/me", {
-			templateUrl: "me.html"
+			templateUrl: "employee.html",
+			controller: "EmployeeController"
 		})
 ;
 		$routeProvider.otherwise({
