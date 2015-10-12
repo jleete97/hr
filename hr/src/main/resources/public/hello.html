@@ -23,8 +23,8 @@
 	</div>
 </header>
 
-<!-- div class="mainView" ng-view>
-</div -->
+<div class="mainView" ng-view>
+</div>
 
 <script src="js/jquery-1.11.3.js"></script>
 <script src="js/angular.js"></script>
@@ -52,6 +52,53 @@ angular.module("hrApp", ["ngRoute"])
 */
 ;
 
+//Services (before controllers)
+
+
+angular.module("hrApp")
+.factory("UserService", ["$http", function($http) {
+	return {
+		isLoggedIn: false,
+
+		session: function() {
+			return $http.get('/api/session')
+			.then(function(response) {
+				service.isLoggedIn = true;
+				return response;
+			});
+		},
+
+		login: function(user) {
+			return { "id" : "jon" }
+/*
+			return $http.post('/api/login', user)
+			.then(function(response) {
+				service.isLoggedIn = true;
+				return response;
+			});
+*/
+		}
+	};
+}])
+
+.factory("EmployeeService", ["$http", function($http) {
+	return {
+		
+	};
+}])
+
+.factory("GroupService", ["$http", function($http) {
+	return {
+		
+	};
+}])
+
+.factory("ReviewService", ["$http", function($http) {
+	return {
+		
+	};
+}]);
+
 //Controllers
 
 angular.module('hrApp')
@@ -76,6 +123,7 @@ angular.module('hrApp')
 		};
 		
 		self.addEmployee = function() {
+			alert("Add Employee");
 //			window.open("employee.html");
 		}
 		
@@ -124,47 +172,6 @@ angular.module('hrApp')
 		}
 	}])
 ;
-
-angular.module("hrApp")
-.factory("UserService", ["$http", function($http) {
-	return {
-		isLoggedIn: false,
-
-		session: function() {
-			return $http.get('/api/session')
-			.then(function(response) {
-				service.isLoggedIn = true;
-				return response;
-			});
-		},
-
-		login: function(user) {
-			return $http.post('/api/login', user)
-			.then(function(response) {
-				service.isLoggedIn = true;
-				return response;
-			});
-		}
-	};
-}])
-
-.factory("EmployeeService", ["$http", function($http) {
-	return {
-		
-	};
-}])
-
-.factory("GroupService", ["$http", function($http) {
-	return {
-		
-	};
-}])
-
-.factory("ReviewService", ["$http", function($http) {
-	return {
-		
-	};
-}]);
 
 </script>
 

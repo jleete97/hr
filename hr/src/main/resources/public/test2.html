@@ -1,0 +1,18 @@
+<div class="card" id="employees" ng-controller="TestController as ctrl">
+	<table>
+		<tr><th colspan="4">{{ctrl.getCount()}} Tests</th></tr>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Result</th>
+		</tr>
+
+		<tr ng-repeat="test in ctrl.getAllTests()">
+			<td>{{test.id}}</td>
+			<td>{{test.name}}</td>
+			<td>{{test.desc}}</td>
+			<td>{{test.status}}</td>
+		</tr>
+	</table>
+</div>

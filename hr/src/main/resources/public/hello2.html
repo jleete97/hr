@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HR - Hello</title>
+	<link rel="stylesheet" type="text/css" href="css/hr.css">
+	<meta charset="utf-8">
+</head>
+
+<body ng-app="testApp">
+
+<header ng-controller="MainCtrl as mainCtrl">
+	<span class="header_title">Test System - {{mainCtrl.count()}} tests</span>
+	<div class="header_links">
+		<a href="#/">All Tests</a>
+		<a href="#/admin">Admin</a>
+		<a href="#/hr">HR</a>
+		<a href="#/manager">Manager</a>
+		<a href="#/me">Me</a>
+	</div>
+</header>
+
+<div style="height:10em;"></div>
+
+<div class="mainView" ng-view>
+</div>
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/angular.js"></script>
+<script src="js/angular-route.js"></script>
+
+<script src="js/app2.js"></script>
+<script src="js/services2.js"></script>
+<script src="js/controllers2.js"></script>
+
+</body>
+</html>
