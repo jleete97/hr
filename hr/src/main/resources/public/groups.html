@@ -6,10 +6,10 @@
 			<th align="right"><button ng-click="ctrl.addGroup()">Add Group</button></th>
 		</tr>
 
-		<tr ng-repeat="group in ctrl.groups">
+		<tr ng-repeat="group in ctrl.groups()">
 			<td>{{group.name}}</td>
 			<td>{{group.type}}</td>
-			<td><a href="/group.html?id={{group.id}}">Edit</a></td>
+			<td><a href="/#group?id={{group.id}}">Edit</a></td>
 		</tr>
 	</table>
 </div>

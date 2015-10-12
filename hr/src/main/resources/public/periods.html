@@ -8,12 +8,12 @@
 			<th align="right"><button ng-click="ctrl.addPeriod()">Add Period</button></th>
 		</tr>
 
-		<tr ng-repeat="period in ctrl.periods">
+		<tr ng-repeat="period in ctrl.periods()">
 			<td>{{period.name}}</td>
 			<td>{{period.start}}</td>
 			<td>{{period.end}}</td>
 			<td>{{period.status}}</td>
-			<td><a href="/period.html?id={{period.id}}">Edit</a></td>
+			<td><a href="#/period?id={{period.id}}">Edit</a></td>
 		</tr>
 	</table>
 </div>

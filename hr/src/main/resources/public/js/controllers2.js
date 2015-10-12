@@ -23,23 +23,16 @@ angular.module('testApp')
 		};
 	}])
 	
-	.controller('GroupsController', ["GroupService",
-			function(TestService) {
-		var self = this;
-		self.getGroups = function() {
-			return TestService.getGroups();
-		};
-	}])
-	
 	.controller('GroupController', ["GroupService", "$routeParams",
 			function(GroupService, $routeParams) {
 		var self = this;
-		self.getGroup = function() {
+		self.group = function() {
 			return GroupService.getGroup($routeParams.id);
 		};
-		self.getGroups = function() {
+		self.groups = function() {
 			return GroupService.getGroups();
 		};
+		self.addGroup = function() { }
 	}])
 	
 	.controller('EmployeesController', ["EmployeeService",
@@ -53,11 +46,30 @@ angular.module('testApp')
 	.controller('EmployeeController', ["EmployeeService", "$routeParams",
 			function(EmployeeService, $routeParams) {
 		var self = this;
-		self.getEmployee = function() {
+		self.employee = function() {
 			return EmployeeService.getEmployee($routeParams.id);
 		};
 		self.getEmployees = function() {
 			return EmployeeService.getEmployees();
 		};
+	}])
+	
+	.controller('AdminController', ["AdminService", "$routeParams",
+			function(AdminService, $routeParams) {
+		var self = this;
+		self.period = function() {
+			return AdminService.getPeriod($routeParams.id);
+		};
+		self.periods = function() {
+			return AdminService.getPeriods();
+		};
+		self.addPeriod = function() { };
+		self.employeeType = function() {
+			return AdminService.getEmployeeType($routeParams.id);
+		};
+		self.employeeTypes = function() {
+			return AdminService.getEmployeeTypes();
+		};
+		self.addEmployeeType = function() { };
 	}])
 ;

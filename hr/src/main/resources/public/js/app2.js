@@ -23,15 +23,15 @@ angular.module("testApp", ["ngRoute"])
 		})
 		.when("/groups", {
 			templateUrl: "groups.html",
-			controller: "GroupsController"
+			controller: "GroupController as ctrl"
 		})
 		.when("/group/:id", {
 			templateUrl: "group.html",
-			controller: "GroupsController"
+			controller: "GroupController as ctrl"
 		})
 		.when("/employee/:id", {
 			templateUrl: "employee.html",
-			controller: "EmployeeController"
+			controller: "EmployeeController as ctrl"
 		})
 		.when("/reports", {
 			templateUrl: "reports.html",
@@ -39,7 +39,19 @@ angular.module("testApp", ["ngRoute"])
 		})
 		.when("/me", {
 			templateUrl: "employee.html",
-			controller: "EmployeeController"
+			controller: "EmployeeController as ctrl"
+		})
+		.when("/periods", {
+			templateUrl: "periods.html",
+			controller: "AdminController as ctrl"
+		})
+		.when("/employee_types", {
+			templateUrl: "employee_types.html",
+			controller: "AdminController as ctrl"
+		})
+		.when("/employee_type/:id", {
+			templateUrl: "employee_type.html",
+			controller: "AdminController as ctrl"
 		})
 ;
 		$routeProvider.otherwise({

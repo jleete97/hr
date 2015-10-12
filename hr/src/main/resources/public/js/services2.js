@@ -22,11 +22,11 @@ angular.module("testApp")
 
 	.factory("GroupService", [function() {
 			var groups = [
-					{ id: 1001, name : "Logistics" },
-					{ id: 1002, name : "Supply" },
-					{ id: 1003, name : "Admin" },
-					{ id: 1004, name : "Operations" },
-					{ id: 1005, name : "Human Resouces" }
+					{ id: 1001, name : "Logistics", type: "STAFF", status: "ACTIVE" },
+					{ id: 1002, name : "Supply", type: "STAFF", status: "ACTIVE" },
+					{ id: 1003, name : "Admin", type: "ADMIN", status: "ACTIVE" },
+					{ id: 1004, name : "Operations", type: "STAFF", status: "ACTIVE" },
+					{ id: 1005, name : "Human Resouces", type: "ADMIN", status: "ACTIVE" }
 				];
 			return {
 				count: function() {
@@ -48,9 +48,9 @@ angular.module("testApp")
 
 	.factory("EmployeeService", [function() {
 			var employees = [
-				{ id: 101, firstname : "Alice", lastname : "Adams", type : "MGR" },
-				{ id: 102, firstname : "Bob", lastname : "Bricker", type : "STAFF" },
-				{ id: 103, firstname : "Chuck", lastname : "Cheese", type : "STAFF" },
+					{ id: 101, firstname : "Alice", lastname : "Adams", type : "MGR" },
+					{ id: 102, firstname : "Bob", lastname : "Bricker", type : "STAFF" },
+					{ id: 103, firstname : "Chuck", lastname : "Cheese", type : "STAFF" }
 				];
 			return {
 				count: function() {
@@ -63,6 +63,44 @@ angular.module("testApp")
 					for (emp in employees) {
 						if (emp.id == id) {
 							return emp;
+						}
+					}
+					return null;
+				}
+			};
+	}])
+
+	.factory("AdminService", [function() {
+			var periods = [
+					{ id: 2014, code : "2014", start : "2014-01-01", end : "2014-12-31", name : "CY 2014", status: "INACTIVE" },
+					{ id: 2015, code : "2015", start : "2015-01-01", end : "2015-12-31", name : "CY 2015", status: "ACTIVE" },
+					{ id: 2016, code : "2016", start : "2016-01-01", end : "2016-12-31", name : "CY 2016", status: "ACTIVE" },
+					{ id: 2017, code : "2017", start : "2017-01-01", end : "2017-12-31", name : "CY 2017", status: "ACTIVE" }
+				];
+			var employeeTypes = [
+					{ id: 51, code : "HR", name : "Human Resources" },
+					{ id: 52, code : "MGR", name : "Manager" },
+					{ id: 53, code : "HR", name : "Staff" }
+				];
+			return {
+				getPeriods: function() {
+					return periods;
+				},
+				getPeriod: function(id) {
+					for (period in periods) {
+						if (period.id == id) {
+							return period;
+						}
+					}
+					return null;
+				},
+				getEmployeeTypes: function() {
+					return employeeTypes;
+				},
+				getEmployeeType: function(id) {
+					for (type in employeeTypes) {
+						if (type.id == id) {
+							return type;
 						}
 					}
 					return null;

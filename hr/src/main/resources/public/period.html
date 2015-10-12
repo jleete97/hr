@@ -1,16 +1,15 @@
 <div class="card" id="period">
 	<div class="work_area">
-	Name: {{period.name}}
+	ID: {{ctrl.period().id}}
 	<br>
-	Start: {{period.start}}
+	Code: {{ctrl.period().code}}
 	<br>
-	End: {{period.end}}
-	</div>
-
-	<div class="buttons">
-		<button ng-click="ctrl.setEdit(true);">Edit</button>
-		<button ng-click="ctrl.submit();">Save</button>
-		<button ng-click="ctrl.reset();">Reset</button>
-		<button ng-click="ctrl.setEdit(false);">Cancel</button>
+	Name: {{ctrl.period().name}}
+	<br>
+	Start: {{ctrl.period().start}}
+	<br>
+	End: {{ctrl.period().end}}
+	<br>
+	Status: {{ctrl.period().status}}
 	</div>
 </div>
